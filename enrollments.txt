@@ -1,0 +1,1 @@
+Student: Tsewang, Course: CS101, Credits: 3, Total Fee: Rs 3600.0
