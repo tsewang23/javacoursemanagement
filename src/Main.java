@@ -1,12 +1,12 @@
 import java.io.*;
 import java.util.*;
 
-// ================= INTERFACE =================
+
 interface Enroll {
     void enrollStudent(String studentName, int creditHours) throws Exception;
 }
 
-// ================= BASE CLASS =================
+
 class Course {
     private String courseCode;
     private double feePerCredit;
@@ -25,7 +25,6 @@ class Course {
     }
 }
 
-// ================= CHILD CLASS (INHERITANCE + POLYMORPHISM) =================
 class LabCourse extends Course {
     public LabCourse(String courseCode) {
         super(courseCode, 1500);
@@ -37,14 +36,14 @@ class LabCourse extends Course {
     }
 }
 
-// ================= CUSTOM EXCEPTION =================
+
 class InvalidCreditException extends Exception {
     public InvalidCreditException(String msg) {
         super(msg);
     }
 }
 
-// ================= FILE HANDLING =================
+
 class EnrollmentFile {
     public static void save(String name, String course, int credits, double total) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("enrollments.txt", true))) {
@@ -59,7 +58,7 @@ class EnrollmentFile {
     }
 }
 
-// ================= MULTITHREADING =================
+
 class EnrollmentThread extends Thread {
     public void run() {
         try {
@@ -72,7 +71,6 @@ class EnrollmentThread extends Thread {
     }
 }
 
-// ================= COURSE MANAGEMENT =================
 class University implements Enroll {
     private Course course;
 
@@ -101,7 +99,7 @@ class University implements Enroll {
     }
 }
 
-// ================= MAIN =================
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
